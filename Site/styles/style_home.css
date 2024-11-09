@@ -1,7 +1,194 @@
-body {
-    background-color: black;
+@charset "UTF-8";
+
+@font-face {
+    font-family: league;
+    src: url(./fontes/league-spartan.bold.ttf) format('truetype');
 }
 
-.header {
+
+@font-face {
+    font-family: asap;
+    src: url(./fontes/AsapCondensed-Bold.ttf) format('truetype');
+}
+
+
+body {
+    background-color: black;
+    color: whitesmoke;
+    margin: 0;
+    top: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+}
+
+.header .container .titulo {
+
+    font-style: normal; 
+    font-kerning: none; 
+    text-decoration: none;
+    font-family: asap;
+    font-size: 45px;
+    text-align: left;
+    line-height: 70%;
+    margin-top: 20px;
+}
+
+.navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: whitesmoke;
+    font-family: league;
+    margin-top: 10px;
+    gap: 15px;
+    margin-right: 120px;
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+.banner {
+    background-image: url('./imgs/pexels-chad-kirchoff-346647-952437.jpg');
+    height: 650px;
+    width: 100%;
+    background-size: cover;
+    font-family: asap;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.banner .container1 {
+    background-color: black;
+    height: 400px;
+    width: 600px;
+    opacity: 0.8;
+    border-radius: 30px 30px;
+    text-align: center;
+    display: block;
+    justify-content: space-between;
+    padding: 40px 40px;
+}
+
+.banner .container1 img {
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+    margin-top: -30px;
+}
+
+.container1 p {
+    text-align: center;
+    color: whitesmoke;
+}
+
+.social1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.social1 .container2 {
+    height: 680px;
+    width: 100%;
+    background-color: #dbdbdb;
+    color: black;
+    font-family: asap;
+}
+
+.social1 .container2 h1 {
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    margin-top: 50px;
+    word-spacing: 5px;
     
 }
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 250px;
+    font-size: 35px;
+}
+
+.box1 {
+    padding: 25px 20px;
+    word-spacing: 7px;
+}
+
+.box2 {
+    padding: 25px 20px;
+    word-spacing: 7px;
+}
+
+.box3 {
+    padding: 25px 20px;
+    word-spacing: 7px;
+}
+
+.boxes img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 450px;
+    margin-top: -250px;
+}
+
+.boxes h4 {
+    margin-top: -50px;
+}
+
+.container3 {
+    align-items: center;
+}
+.social2 {
+    background-image: url("./imgs/TelaFinalHome.png");
+    height: 700px;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+
+.container3 img {
+    height: 600px;
+    width: 420px;
+    margin-left: -450px;
+    margin-top: 150px;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
