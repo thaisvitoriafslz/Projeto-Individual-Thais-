@@ -59,7 +59,7 @@ a {
 
 .banner {
     background-image: url('./imgs/pexels-chad-kirchoff-346647-952437.jpg');
-    height: 650px;
+    height: 800px;
     width: 100%;
     background-size: cover;
     font-family: asap;
@@ -103,7 +103,7 @@ a {
 }
 
 .social1 .container2 {
-    height: 680px;
+    height: 750px;
     width: 100%;
     background-color: #dbdbdb;
     color: black;
@@ -114,7 +114,7 @@ a {
     font-size: 60px;
     text-align: center;
     margin: 0;
-    margin-top: 50px;
+    margin-top: 100px;
     word-spacing: 5px;
     
 }
@@ -156,27 +156,136 @@ a {
     margin-top: -50px;
 }
 
-.container3 {
-    align-items: center;
-}
 .social2 {
     background-image: url("./imgs/TelaFinalHome.png");
     height: 700px;
     width: 100%;
     background-size: cover;
+    font-family: asap;
+    font-size: 45px;
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
+    text-align: center;
+    margin-top: -5px;
 }
 
-
-.container3 img {
+.social2 img {
     height: 600px;
-    width: 420px;
-    margin-left: -450px;
-    margin-top: 150px;
+    width: 400px;
     border-radius: 20px;
+    margin-right: 100px; 
 }
+
+.container3 {
+    background-color: rgba(0, 0, 0, 0.05); 
+    padding: 30px;
+    border-radius: 20px;
+    color: whitesmoke;
+    text-align: center;
+    max-width: 600px;
+    margin-left: 200px;
+}
+
+.container3 .titulo h1 {
+    font-size: 50px;
+    font-family: league;
+    margin-bottom: 150px;
+    word-spacing: 5px;
+}
+
+.container3 .frase h2 {
+    font-size: 50px;
+    font-family: asap;
+    margin-bottom: 50px;
+    word-spacing: 2px;
+}
+
+#botaosobre {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 30px;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#botaosobre:hover {
+    background-color: #f0f0f0; 
+}
+
+.footer {
+    background-color: #3a3a5c; 
+    color: whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+
+.container4 {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.telas, .criador, .redes {
+    flex: 1;
+    text-align: center;
+}
+
+.telas {
+    text-align: left; 
+    margin-left: -150px;
+    margin-bottom: 100px;
+}
+
+.criador {
+    text-align: center; 
+    margin-bottom: 100px;
+    margin-top: -150px;
+}
+
+.redes {
+    text-align: right;
+    margin-right: -150px;
+    margin-bottom: 100px;
+}
+
+.telas h4, .criador h4, .redes h4 {
+    font-family: league;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px;
+}
+
+.telas h4 span, .criador h4 span, .redes h4 span {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.telas h4 {
+    line-height: 1.6;
+}
+
+.redes h4 {
+    line-height: 1.6;
+}
+
+.criador h4 {
+    line-height: 1.2;
+}
+
+
+
+
+
+
 
 
 
