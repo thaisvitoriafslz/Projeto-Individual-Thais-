@@ -157,7 +157,7 @@ a {
 }
 
 .social2 {
-    background-image: url("./imgs/TelaFinalHome.png");
+    background-image: url("../style/imgs/TelaFinalHome.jpg");
     height: 700px;
     width: 100%;
     background-size: cover;
@@ -261,6 +261,7 @@ a {
     font-weight: bold;
     margin: 0;
     padding: 10px;
+    margin-top: 15px;
 }
 
 .telas h4 span, .criador h4 span, .redes h4 span {
@@ -280,24 +281,3 @@ a {
 .criador h4 {
     line-height: 1.2;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
