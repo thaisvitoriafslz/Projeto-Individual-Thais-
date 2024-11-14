@@ -1,0 +1,64 @@
+.footer {
+    background-color: #373a55; 
+    color: whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+
+.containerfooter {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.telas, .criador, .redes {
+    flex: 1;
+    text-align: center;
+}
+
+.telas {
+    text-align: left; 
+    margin-left: -150px;
+    margin-bottom: 100px;
+}
+
+.criador {
+    text-align: center; 
+    margin-bottom: 100px;
+    margin-top: -150px;
+}
+
+.redes {
+    text-align: right;
+    margin-right: -150px;
+    margin-bottom: 100px;
+}
+
+.telas h4, .criador h4, .redes h4 {
+    font-family: league;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.telas h4 span, .criador h4 span, .redes h4 span {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.telas h4 {
+    line-height: 1.6;
+}
+
+.redes h4 {
+    line-height: 1.6;
+}
+
+.criador h4 {
+    line-height: 1.2;
+}

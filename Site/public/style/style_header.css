@@ -1,0 +1,41 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    margin: 0;
+    align-items: center;
+}
+
+.header {
+    background-color: black;
+    min-height: 80px;
+}
+
+.container .titulo {
+    font-style: normal; 
+    font-kerning: none; 
+    text-decoration: none;
+    font-family: asap;
+    font-size: 45px;
+    text-align: left;
+    line-height: 70%;
+    margin-top: 20px;
+}
+
+.navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: whitesmoke;
+    font-family: league;
+    gap: 15px;
+    margin-right: 120px;
+    font-size: 20px;
+    margin-top: 15px;
+}

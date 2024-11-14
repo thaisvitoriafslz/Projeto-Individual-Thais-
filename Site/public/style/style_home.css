@@ -11,56 +11,12 @@
     src: url(./fontes/AsapCondensed-Bold.ttf) format('truetype');
 }
 
-
 body {
     background-color: white;
     color: whitesmoke;
     margin: 0;
     top: 0;
 }
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 40px;
-}
-
-.header {
-    background-color: black;
-    height: 110px;
-}
-
-.header .container .titulo {
-
-    font-style: normal; 
-    font-kerning: none; 
-    text-decoration: none;
-    font-family: asap;
-    font-size: 45px;
-    text-align: left;
-    line-height: 70%;
-    margin-top: 20px;
-}
-
-.navbar {
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    color: whitesmoke;
-    font-family: league;
-    margin-top: 10px;
-    gap: 15px;
-    margin-right: 120px;
-    font-size: 20px;
-    margin-top: 15px;
-  }
 
 .banner {
     background-image: url('./imgs/pexels-chad-kirchoff-346647-952437.jpg');
@@ -73,7 +29,6 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: -5px;
 }
 
 .banner .container1 {
@@ -222,67 +177,3 @@ a {
     background-color: #f0f0f0; 
 }
 
-.footer {
-    background-color: #3a3a5c; 
-    color: whitesmoke;
-    padding: 0;
-    margin: 0;
-}
-
-.container4 {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.telas, .criador, .redes {
-    flex: 1;
-    text-align: center;
-}
-
-.telas {
-    text-align: left; 
-    margin-left: -150px;
-    margin-bottom: 100px;
-}
-
-.criador {
-    text-align: center; 
-    margin-bottom: 100px;
-    margin-top: -150px;
-}
-
-.redes {
-    text-align: right;
-    margin-right: -150px;
-    margin-bottom: 100px;
-}
-
-.telas h4, .criador h4, .redes h4 {
-    font-family: league;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0;
-    padding: 10px;
-    margin-top: 15px;
-}
-
-.telas h4 span, .criador h4 span, .redes h4 span {
-    display: block;
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.telas h4 {
-    line-height: 1.6;
-}
-
-.redes h4 {
-    line-height: 1.6;
-}
-
-.criador h4 {
-    line-height: 1.2;
-}
