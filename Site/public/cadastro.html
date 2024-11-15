@@ -6,72 +6,77 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
+  <title>Worship Jesus | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
 
-  <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="./style/style.cadastro.css"/>
+  <link rel="stylesheet" href="./style/style_header.css"/>
+  <link rel="stylesheet" href="./style/style_footer.css"/>
+  
 </head>
 
 <body onload="listar()">
   <!--header inicio-->
   <div class="header">
     <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
+        <h1 class="titulo">WORSHIP JESUS</h1>
+        <ul class="navbar">
+        <li class="agora">
+            <a href="./index.html">Home</a>
         </li>
         <li>
-          <a href="simulador.html">Simulador</a>
+            <a href="sobre.html">Sobre</a>
+        </li>
+        <li>
+            <a href="ajuda.html">Ajuda</a>
         </li>
         <li>|</li>
         <li>
-          <a href="login.html">Login</a>
+            <a href="login.html">Login</a>
         </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
+        <li>
+            <a href="cadastro.html">Cadastro</a>
         </li>
-      </ul>
+        </ul>   
     </div>
-  </div>
+</div>
   <!--header fim-->
 
   <div class="login">
+    <div class="telalogin">
     <div class="alerta_erro">
       <div class="card_erro" id="cardErro">
         <span id="mensagem_erro"></span>
       </div>
     </div>
     <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
+      <div class="card-cadastro">
+        <h2>CADASTRO</h2>
         <div class="formulario">
           <!--
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
           <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
+            <span>Nome:</span><br>
+            <input id="nome_input" type="text" placeholder="Informe o seu nome" />
           </div>
           <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
+            <span>Idade:</span><br>
+            <input id="nome_input" type="text" placeholder="Informe a sua idade" />
           </div>
           <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            <span>E-mail:</span><br>
+            <input id="email_input" type="text" placeholder="Informe o seu email" />
           </div>
           <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
+            <span>Senha:</span><br>
+            <input id="senha_input" type="password" placeholder="Informe a sua senha" />
           </div>
           <div class="campo">
-            <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
+            <span>Confirmação da Senha:</span><br>
+            <input id="confirmacao_senha_input" type="password" placeholder="Confirmar senha" />
           </div>
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
@@ -83,14 +88,22 @@
       </div>
     </div>
   </div>
+</div>
 
   <!--footer inicio-->
   <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
+    <div class="containerfooter">
+        <div class="telas">
+            <h4><span>Menu</span><br>Home<br>Sobre<br>Ajuda<br>Login<br>Cadastro</h4>
+        </div>
+        <div class="criador">
+            <h4><span>Criado Por:</span><br> Thais Vitória Fosaluza</h4>
+        </div>
+        <div class="redes">
+            <h4><span>Redes Sociais</span><br> Instagram<br>@thaisfosaluza<br><br>Linkedin<br>Thais Vitória Fosaluza</h4>
+        </div>
     </div>
-  </div>
+</div>
   <!--footer fim-->
 </body>
 

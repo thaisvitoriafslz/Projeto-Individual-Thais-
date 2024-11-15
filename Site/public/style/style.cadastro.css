@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: league;
+    src: url(./fontes/league-spartan.bold.ttf) format('truetype');
+}
+
+
+@font-face {
+    font-family: asap;
+    src: url(./fontes/AsapCondensed-Bold.ttf) format('truetype');
+}
+
+body {
+    background-color: white;
+    color: whitesmoke;
+    margin: 0;
+    top: 0;
+    padding: 0;
+}
+
+.login {
+    color: black;
+    background-image: url(./imgs/pexels-chad-kirchoff-346647-952437.jpg);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.telalogin {
+    background-color: #f1efe7;
+    height: 500px;
+    width: 680px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: -90px;
+}
+
+.card-cadastro h2 {
+    font-family: asap;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.alerta_erro{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .card_erro {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #ED145B 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+  .formulario .tipo_campo {
+    font-size: 20px;
+    font-weight: 600 !important;
+  }
+  
+  .formulario {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    border: 2px solid black;
+    padding: 10px 200px;
+    text-align: center;
+    border-radius: 10px;
+    width: 250px;
+  }
+
+  .campo span {
+    margin-left: 5px;
+    font-family: league;
+  }
+  
+  .botao {
+    font-family: "Barlow", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    background-color: black;
+    width: 120px;
+    align-self: center;
+    margin-top: 5px;
+  }
+  
+  .loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
+
+  /*login*/
+
+  .telalogin2 {
+    background-color: #f1efe7;
+    height: 300px;
+    width: 680px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: -90px;
+}
+
+.login2 {
+    color: black;
+    background-image: url(./imgs/pexels-chad-kirchoff-346647-952437.jpg);
+    height: 700px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
