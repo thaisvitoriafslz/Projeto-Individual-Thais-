@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: league;
+    src: url(./fontes/league-spartan.bold.ttf) format('truetype');
+}
+
+
+@font-face {
+    font-family: asap;
+    src: url(./fontes/AsapCondensed-Bold.ttf) format('truetype');
+}
+
+body {
+    background-color: #f1efe7;
+    color: whitesmoke;
+    margin: 0;
+    top: 0;
+}
+
+.suporte {
+    background-color: #f1efe7;
+    height: 700px;
+    width: 100%;
+    color: black;
+    justify-content: center;
+    align-items: center; 
+}
+
+.container1 {
+    color: black;
+    margin: 50px auto; 
+    padding: 50px 10px;
+    align-items: center;
+    display: block;
+    margin-top: 40px;
+}
+
+.texto h1 {
+    font-family: asap;
+    font-size: 70px;
+    word-spacing: 10px;
+    text-align: center;
+    margin-top: -40px;
+}
+
+.texto p {
+    font-family: league;
+    font-size: 35px;
+    margin-left: 150px;
+    margin-top: 100px;
+    word-spacing: 5px;
+}
+
+.texto h2 {
+    font-family: league;
+    font-size: 40px;
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.imagem img {
+    margin-left: 880px;
+    margin-top: -420px;
+    height: 400px;
+    width: 400px;
+    display: flex;
+}
+
+#botaoajuda {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 40px;
+    color: white;
+    background-color: #1b1c1e;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-left: 910px;
+    margin-top: -150px;
+    font-family: asap;
+    word-spacing: 5px;
+}
+
+#botaoajuda:hover {
+    background-color: #1b1c1e; 
+}
+
+.whats img {
+    height: 90px;
+    width: 90px;
+    margin-left: 1260px;
+    margin-top: -82px;
+    display: flex;
+}
+
