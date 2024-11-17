@@ -13,7 +13,21 @@
 
 </head>
 
-<body>
+<body onload="mostrarconteudo();">
+    
+    <script src="./js/sessao.js"></script>
+    
+    <style>
+        #depois { display: none; }
+    </style>
+    
+    <script>
+        function mostrarConteudo() {
+            var elemento = document.getElementById("depois");
+            elemento.style.display = "block";
+        }
+    </script>
+
     <div class="header">
         <div class="container">
             <h1 class="titulo">WORSHIP JESUS</h1>
@@ -60,7 +74,7 @@
             <img src="./style/imgs/logo.png">
             </div>
             <div class="texto">
-                <h1>A Worship Jesus é movida pela<br>paixão por cristo e a música!</h1><br>
+                <h1>A Worship Jesus é movida pela<br>paixão por Cristo e a música!</h1><br>
                 <p>Acreditamos que para ter um ministério de<br>louvor cheio da presença de Deus é preciso<br>algumas práticas.<br><br>Através da Worship Jesus, você encontrará<br>conteúdos para o seu desenvolvimento técnico<br>e espiritual, mudando seu relacionamento com<br>Deus e seu ministério de uma vez por todas!</p>
             </div>
         </div>

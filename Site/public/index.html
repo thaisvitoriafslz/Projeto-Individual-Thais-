@@ -15,8 +15,20 @@
 
 </head>
 
-<body>
+<body onload="mostrarconteudo();">
+    
 <script src="./js/sessao.js"></script>
+
+<style>
+    #depois { display: none; }
+</style>
+
+<script>
+    function mostrarConteudo() {
+        var elemento = document.getElementById("depois");
+        elemento.style.display = "block";
+    }
+</script>
 
     <div class="header">
         <div class="container">

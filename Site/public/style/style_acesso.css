@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: league;
+    src: url(./fontes/league-spartan.bold.ttf) format('truetype');
+}
+
+
+@font-face {
+    font-family: asap;
+    src: url(./fontes/AsapCondensed-Bold.ttf) format('truetype');
+}
+
+body {
+    background-color: white;
+    color: whitesmoke;
+    margin: 0;
+    top: 0;
+}
+
+.banner {
+    background-image: url('./imgs/fundo_praise.png');
+    height: 700px;
+    width: 100%;
+    background-size: cover;
+    font-family: asap;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.container1 p {
+    text-align: start;
+    font-family: league;
+    margin-left: 40px;
+    margin-top: 100px;
+}
+
+.container1 h1 {
+    margin-left: -750px;
+    margin-top: 100px;
+    word-spacing: 10px;
+}
+
+.container1 img {
+    margin-left: 900px;
+    margin-top: -400px;
+}
+
+.texto {
+    margin-top: 150px;
+}
+

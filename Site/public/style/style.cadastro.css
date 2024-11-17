@@ -57,19 +57,20 @@ body {
   
   .card_erro {
     display: none;
-    background-color: #fff;
+    background-color: #f1efe7;
     color: black;
     width: 230px;
     position: fixed;
     border-radius: 4px;
-    border: #ED145B 3px solid;
+    border: black 3px solid;
     padding: 10px;
-    margin-right: 10%;
+    margin-right: -650px;
   }
   
   .card_erro #mensagem_erro{
     font-weight: 500;
     font-size: 20px;
+    font-size: league;
   }
   
   .formulario .tipo_campo {
@@ -89,6 +90,7 @@ body {
     text-align: center;
     border-radius: 10px;
     width: 250px;
+    background-color: #f1efe7;
   }
 
   .campo span {
