@@ -285,3 +285,139 @@ body {
     margin-left: 900px;
     margin-top: -500px;
 }
+
+.praticas {
+    background-color: #f1efe7;
+    height: 800px;
+    width: 100%;
+    color: black;
+    margin-top: -70px;
+    justify-content: center;
+    align-items: center;
+    font-family: league;
+}
+
+.praticas h2 {
+    font-size: 35px;
+    margin-left: 100px;
+    margin-top: 70px;
+}
+
+.praticas2 h2 {
+    font-size: 35px;
+    margin-left: 100px;
+    margin-top: 70px;
+}
+
+.praticas p {
+    font-size: 25px;    
+    text-align: justify;
+    line-height: 1.6; 
+    width: 45%;
+    margin-left: 100px;
+}
+
+.praticas2 p {
+    font-size: 25px;    
+    text-align: justify;
+    line-height: 1.6; 
+    width: 45%;
+    margin-left: 100px;
+}
+
+.praticas img {
+    margin-left: 950px;
+    margin-top: -500px;
+}
+
+.praticas2 img {
+    margin-left: 950px;
+    margin-top: -500px;
+}
+
+.praticas2 {
+    background-color: #f1efe7;
+    height: 650px;
+    width: 100%;
+    color: black;
+    margin-top: -70px;
+    justify-content: center;
+    align-items: center;
+    font-family: league;
+}
+
+.container8_ {
+    margin-top: -50px;
+}
+
+
+.container8 p6 img {
+    margin-top: 100px;
+}
+
+.desafio {
+    background-image: url("../style/imgs/TelaFinalHome.jpg");
+    height: 700px;
+    width: 100%;
+    background-size: cover;
+    font-family: asap;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.desafio img {
+    height: 550px;
+    width: 400px;
+    border-radius: 20px;
+    margin-right: 100px; 
+}
+
+.container9 img {
+    height: 150px;
+    width: 150px;
+    margin-left: 100px;
+}
+
+.container9 {
+    padding: 30px;
+    border-radius: 20px;
+    color: whitesmoke;
+    text-align: center;
+    max-width: 600px;
+    margin-left: 200px;
+    margin-top: -150px;
+}
+
+ .titulo h1 {
+    font-size: 80px;
+    font-family: asap;
+    word-spacing: 5px;
+    display: block;
+    margin-top: 200px;
+}
+
+.container9 .frase h2 {
+    font-size: 50px;
+    font-family: asap;
+    word-spacing: 2px;
+}
+
+#botaoquiz {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 30px;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#botaoquiz:hover {
+    background-color: #f0f0f0; 
+}

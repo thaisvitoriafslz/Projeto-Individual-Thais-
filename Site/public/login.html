@@ -146,6 +146,10 @@
                     setTimeout(function () {
                         window.location = "./acesso.html";
                     }, 1000); // apenas para exibir o loading
+
+                    resposta.json().then(json => {
+                        sessionStorage.ID_USUARIO = json.id;
+                    })
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");

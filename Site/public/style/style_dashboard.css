@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: league;
+    src: url(./fontes/league-spartan.bold.ttf) format('truetype');
+}
+
+
+@font-face {
+    font-family: asap;
+    src: url(./fontes/AsapCondensed-Bold.ttf) format('truetype');
+}
+
+body {
+    background-color: #f1efe7;
+    color: white;
+    margin: 0;
+    top: 0;
+    font-family: league;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.dashboard h1 {
+    background-color: #1b1c1e;
+    color: white;
+    padding: 2vh;
+    width: 300px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    justify-self: center;
+    font-family: asap;
+    font-size: 50px;
+    border-radius: 15px;
+}
+
+.container1 {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    margin-top: 80px;
+}
+
+.kpi1 {
+background-color: #1b1c1e;
+height: 150px;
+width: 250px;
+text-align: center;
+border-radius: 15px;
+font-size: 15px;
+}
+
+.kpi2 {
+    background-color: #1b1c1e;
+    height: 150px;
+    width: 250px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.kpi3 {
+    background-color: #1b1c1e;
+    height: 150px;
+    width: 250px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.graficos {
+    flex-direction: row;
+    display: flex;
+    gap: 100px;
+    justify-self: center;
+    margin-top: 20px;
+    padding: 80px 50px;
+}
+

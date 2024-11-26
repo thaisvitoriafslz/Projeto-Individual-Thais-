@@ -1,94 +1,59 @@
 const questions = [
     {
-        question: "blablabla1?",
+        question: "Qual prática é de extrema importância para ter intimidade com Deus?",
         answers: [
-            {text: "1", correct: true},
-            {text: "2", correct: false},
-            {text: "3", correct: false},
-            {text: "4", correct: false},
+            {text: "Oração", correct: true},
+            {text: "Video Aula", correct: false},
+            {text: "Louvor", correct: false},
+            {text: "Conversar com o Lider de Louvor", correct: false},
         ]
     },
     {
-        question: "blablabla2?",
+        question: "Qual prática nos ajuda a conhecer os mandamentos de Deus?",
         answers: [
-            {text: "1", correct: false},
-            {text: "2", correct: true},
-            {text: "3", correct: false},
-            {text: "4", correct: false},
+            {text: "Oração", correct: false},
+            {text: "Leitura da palavra", correct: true},
+            {text: "Jejum", correct: false},
+            {text: "Praticar conteúdo aprendido em vídeo aula", correct: false},
         ] 
     },
     {
-        question: "blablabla3?",
+        question: "Qual prática nos faz estar em comunhão com as pessoas da igreja?",
         answers: [
-            {text: "1", correct: false},
-            {text: "2", correct: false},
-            {text: "3", correct: true},
-            {text: "4", correct: false},
+            {text: "Criar grupo no Whatsapp", correct: false},
+            {text: "Estudar musica sozinho", correct: false},
+            {text: "Participar de cultos e eventos da igreja", correct: true},
+            {text: "Estudar a palavra", correct: false},
         ] 
     },
     {
-        question: "blablabla4?",
+        question: "Qual prática nos torna obedientes a Deus?",
         answers: [
-            {text: "1", correct: false},
-            {text: "2", correct: true},
-            {text: "3", correct: false},
-            {text: "4", correct: false},
+            {text: "Ler a bíblia", correct: false},
+            {text: "Renunciar práticas contraria da vontade de Deus", correct: true},
+            {text: "Estudar Guitarra", correct: false},
+            {text: "Fazer Jejum", correct: false},
         ] 
     },
     {
-        question: "blablabla5?",
+        question: "Qual prática nos ajuda a aprender conteúdos novos de música?",
         answers: [
-            {text: "1", correct: false},
-            {text: "2", correct: false},
-            {text: "3", correct: false},
-            {text: "4", correct: true},
+            {text: "Ler a bílbia e fazer anotações", correct: false},
+            {text: "Perguntar ao meu amigo conteúdos que ele aprendeu de guitarra", correct: false},
+            {text: "Tocar sozinho em casa sem buscar evolução musical", correct: false},
+            {text: "Assistir video aula de música ou ser acompanhado por um professor em aulas", correct: true},
         ] 
     },
     {
-        question: "blablabla6?",
+        question: "Qual prática me ajuda a desenvolver meus conhecimentos de música?",
         answers: [
-            {text: "1", correct: true},
-            {text: "2", correct: false},
-            {text: "3", correct: false},
-            {text: "4", correct: false},
+            {text: "Dedicar horas de estudo na semana, praticando o que aprendi", correct: true},
+            {text: "Conversando com o meu líder de louvor", correct: false},
+            {text: "Ler a bíblia e compartilhar com meu amigo o que aprendi", correct: false},
+            {text: "Assistir aula de guitarra 3x na semana", correct: false},
         ] 
     },
-    {
-        question: "blablabla7?",
-        answers: [
-            {text: "1", correct: false},
-            {text: "2", correct: false},
-            {text: "3", correct: false},
-            {text: "4", correct: true},
-        ] 
-    },
-    {
-        question: "blablabla8?",
-        answers: [
-            {text: "1", correct: false},
-            {text: "2", correct: true},
-            {text: "3", correct: false},
-            {text: "4", correct: false},
-        ] 
-    },
-    {
-        question: "blablabla9?",
-        answers: [
-            {text: "1", correct: false},
-            {text: "2", correct: false},
-            {text: "3", correct: false},
-            {text: "4", correct: true},
-        ] 
-    },
-    {
-        question: "blablabla10?",
-        answers: [
-            {text: "1", correct: false},
-            {text: "2", correct: true},
-            {text: "3", correct: false},
-            {text: "4", correct: false},
-        ] 
-    },
+    
 ];
 
 const questionElement = document.getElementById("question");
@@ -151,9 +116,45 @@ function selectAnswer(e) {
 
 function showScore(){
     resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-    nextButton.innerHTML = "Play Again";
+    questionElement.innerHTML = `Sua pontuação foi de ${score} de ${questions.length}!`;
+    nextButton.innerHTML = "DASHBOARD";
     nextButton.style.display = "block";
+
+    fetch("/pontuaçao/InserirPontuaçao", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          pontuaçaoServer : score,
+          fkUsuarioServer : sessionStorage.ID
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            cardErro.style.display = "block";
+  
+            mensagem_erro.innerHTML =
+              "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+  
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+  
+            limparFormulario();
+            finalizarAguardar();
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+          finalizarAguardar();
+        });
 
 }
 
@@ -170,7 +171,7 @@ nextButton.addEventListener("click", ()=>{
     if(currentQuestionIndex < questions.length) {
         handleNextButton();
     } else {
-        startQuiz();
+        window.location.href = "dashboard.html";
     }
 })
 
