@@ -75,7 +75,13 @@ font-size: 15px;
     display: flex;
     gap: 100px;
     justify-self: center;
-    margin-top: 20px;
+    margin-top: -10px;
     padding: 80px 50px;
 }
 
+.graficos h1 {
+    font-family: league;
+    font-size: 20px;
+    background-color: #f1efe7;
+    color: #1b1c1e;
+}

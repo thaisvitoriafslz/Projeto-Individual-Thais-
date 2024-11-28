@@ -2,8 +2,10 @@ const quizScore = sessionStorage.getItem("quizScore");
 
 const pontuacaoAtual = document.getElementById("pontuacao-atual");
 
-
 pontuacaoAtual.innerHTML = `${quizScore}/10`;
+const Incorretas =  (10 - quizScore)
+const PorcentagemErro = 10 * Incorretas
+const PorcentagemAcerto = 10 * quizScore
 
 
 const labels = [
@@ -50,14 +52,14 @@ const config = {
 };
 
 const labels2 = [
-    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'
+    'Corretas', 'Incorretas'
 ];
 
 const data2 = {
     labels: labels2,
     datasets: [{
-        label: 'Temperatura Média', 
-        data: [2, 24, 27, 23, 20, 18],
+        label: 'Porcentagem', 
+        data: [PorcentagemAcerto, PorcentagemErro],
         backgroundColor: [
             'rgba(0, 0, 255, 0.7)', // Azul
             'rgba(0, 0, 0, 0.7)',   // Preto
@@ -67,23 +69,11 @@ const data2 = {
             'rgba(0, 0, 0, 0.7)',
         ]
     },
-    {
-        label: 'Umidade Média', 
-        data: [90, 89, 93, 87, 88, 82],
-        backgroundColor: [
-            'rgba(0, 0, 255, 0.7)', // Azul
-            'rgba(0, 0, 0, 0.7)',   // Preto
-            'rgba(0, 0, 255, 0.7)',
-            'rgba(0, 0, 0, 0.7)',
-            'rgba(0, 0, 255, 0.7)',
-            'rgba(0, 0, 0, 0.7)',
-        ]
-    }
     ]
 };
 
 const config2 = {
-    type: 'doughnut',
+    type: 'pie',
     data: data2,
     options: {}
 };
