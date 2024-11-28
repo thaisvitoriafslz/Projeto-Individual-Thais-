@@ -1,11 +1,11 @@
-var pontuaçaoModel = require("../models/pontuaçaoModel");
+var pontuacaoModel = require("../models/pontuacaoModel");
 
-function InserirPontuaçaoController(req, res) {
-    var pontuaçao = req.body.pontuaçaoServer;
-    var fkUsuario = req.body.fkUsuarioServer;
+function InserirPontuacao(req, res) {
+    var pontuacao = req.body.pontuacaoServer;
+    var idUsuario = req.body.idUsuarioServer;
 
 
-        pontuaçaoModel.InserirPontuaçao(pontuaçao, fkUsuario)
+        pontuacaoModel.InserirPontuacao(pontuacao, idUsuario)
             .then(
                 function (response) {
                     res.json(response);
@@ -21,5 +21,5 @@ function InserirPontuaçaoController(req, res) {
 
 
 module.exports = {
-    InserirPontuaçaoController,
+    InserirPontuacao,
 }

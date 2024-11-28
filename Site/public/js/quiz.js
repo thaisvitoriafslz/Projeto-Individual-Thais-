@@ -60,6 +60,7 @@ const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
+
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -115,12 +116,16 @@ function selectAnswer(e) {
 }
 
 function showScore(){
+
     resetState();
     questionElement.innerHTML = `Sua pontuação foi de ${score} de ${questions.length}!`;
     nextButton.innerHTML = "DASHBOARD";
     nextButton.style.display = "block";
 
-    fetch("/pontuaçao/InserirPontuaçao", {
+    sessionStorage.setItem("quizScore", score);
+
+      // Enviando o valor da nova input
+    fetch("/pontuacao/InserirPontuacao", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -128,33 +133,10 @@ function showScore(){
         body: JSON.stringify({
           // crie um atributo que recebe o valor recuperado aqui
           // Agora vá para o arquivo routes/usuario.js
-          pontuaçaoServer : score,
-          fkUsuarioServer : sessionStorage.ID
+          pontuacaoServer: score,
+          idUsuarioServer: sessionStorage.ID_USUARIO
         }),
       })
-        .then(function (resposta) {
-          console.log("resposta: ", resposta);
-  
-          if (resposta.ok) {
-            cardErro.style.display = "block";
-  
-            mensagem_erro.innerHTML =
-              "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-  
-            setTimeout(() => {
-              window.location = "login.html";
-            }, "2000");
-  
-            limparFormulario();
-            finalizarAguardar();
-          } else {
-            throw "Houve um erro ao tentar realizar o cadastro!";
-          }
-        })
-        .catch(function (resposta) {
-          console.log(`#ERRO: ${resposta}`);
-          finalizarAguardar();
-        });
 
 }
 

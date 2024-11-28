@@ -1,14 +1,14 @@
 var database = require("../database/config")
 
-function InserirPontuaçao(pontuaçao, FkUsuario) {
+function InserirPontuacao(pontuaçao, fkUsuario) {
     
     var instrucaoSql = `
-        insert into pontuaçao (pontuaçao, fkUsuario) values ('${pontuaçao}', '${FkUsuario}');
+        insert into pontuaçao (pontuaçao, fkUsuario) values ('${pontuaçao}', '${fkUsuario}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
 module.exports = {
-    InserirPontuaçao,
+    InserirPontuacao,
 };

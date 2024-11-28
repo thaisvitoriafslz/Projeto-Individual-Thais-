@@ -140,16 +140,23 @@
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
+            console.log(JSON.stringify(resposta))
 
             if (resposta.ok) {
                 console.log(resposta);
+                    
+                    resposta.json().then(json => {
+                        console.log('printando json')
+                        console.log(json)
+                       sessionStorage.ID_USUARIO = json.id;
+                       console.log(sessionStorage.ID_USUARIO)
+                    })
+
+
                     setTimeout(function () {
                         window.location = "./acesso.html";
                     }, 1000); // apenas para exibir o loading
 
-                    resposta.json().then(json => {
-                        sessionStorage.ID_USUARIO = json.id;
-                    })
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");

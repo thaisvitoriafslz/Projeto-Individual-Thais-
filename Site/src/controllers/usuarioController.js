@@ -1,5 +1,4 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -18,6 +17,10 @@ function autenticar(req, res) {
                     console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
                     if (resultadoAutenticar.length == 1) {
+                        res.status(201).json({
+                            id: resultadoAutenticar[0].idUsuario
+                        })
+
                         console.log(resultadoAutenticar);
                         res.status(200).send("Usuário validado"); // apenas para exibir o loading
                     } else if (resultadoAutenticar.length == 0) {

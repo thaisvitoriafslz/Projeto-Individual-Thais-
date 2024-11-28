@@ -16,7 +16,7 @@ var HOST_APP = process.env.APP_HOST;
 var app = express();
 
 var usuarioRouter = require("./src/routes/usuarios");
-var pontuaçaoRouter = require("./src/routes/pontuaçao");
+var pontuacaoRouter = require("./src/routes/pontuacao");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/usuarios", usuarioRouter);
-app.use("/pontuaçao", pontuaçaoRouter);
+app.use("/pontuacao", pontuacaoRouter);
 
 
 app.listen(PORTA_APP, function () {

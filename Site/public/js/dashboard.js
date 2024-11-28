@@ -1,3 +1,11 @@
+const quizScore = sessionStorage.getItem("quizScore");
+
+const pontuacaoAtual = document.getElementById("pontuacao-atual");
+
+
+pontuacaoAtual.innerHTML = `${quizScore}/10`;
+
+
 const labels = [
     '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'
 ];
