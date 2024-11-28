@@ -42,13 +42,17 @@ body {
     justify-content: center;
     align-items: center;
     gap: 200px;
-    margin-top: 80px;
+    margin-top: 50px;
+}
+
+.container1 h3 {
+    font-size: 27px;
 }
 
 .kpi1 {
 background-color: #1b1c1e;
 height: 150px;
-width: 250px;
+width: 300px;
 text-align: center;
 border-radius: 15px;
 font-size: 15px;
@@ -57,7 +61,7 @@ font-size: 15px;
 .kpi2 {
     background-color: #1b1c1e;
     height: 150px;
-    width: 250px;
+    width: 300px;
     text-align: center;
     border-radius: 15px;
 }
@@ -65,7 +69,7 @@ font-size: 15px;
 .kpi3 {
     background-color: #1b1c1e;
     height: 150px;
-    width: 250px;
+    width: 300px;
     text-align: center;
     border-radius: 15px;
 }

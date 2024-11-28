@@ -8,5 +8,12 @@ router.post("/InserirPontuacao", function (req, res) {
     pontuacaoController.InserirPontuacao(req, res);
 })
 
+router.post("/QtdTentativasUsuario", function (req, res) {
+    pontuacaoController.QtdTentativasUsuario(req, res);
+})
+
+router.post("/TotalUsuarios", function (req, res) {
+    pontuacaoController.TotalUsuarios(req, res);
+})
 
 module.exports = router;

@@ -1,11 +1,69 @@
 const quizScore = sessionStorage.getItem("quizScore");
 
 const pontuacaoAtual = document.getElementById("pontuacao-atual");
+const QtdTentativas = document.getElementById("qtd-tentativas");
+const TotalUsuarios = document.getElementById("total-usuarios");
 
 pontuacaoAtual.innerHTML = `${quizScore}/10`;
+
 const Incorretas =  (10 - quizScore)
 const PorcentagemErro = 10 * Incorretas
-const PorcentagemAcerto = 10 * quizScore
+const PorcentagemAcerto = 10 * quizScore 
+
+fetch("/pontuacao/QtdTentativasUsuario", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      // crie um atributo que recebe o valor recuperado aqui
+      // Agora vá para o arquivo routes/usuario.js
+      idUsuarioServer: sessionStorage.ID_USUARIO
+    }),
+  }).then(function (resposta) {
+    console.log("resposta: ", resposta);
+
+    if (resposta.ok) {
+        
+        resposta.json().then(json => {
+
+          QtdTentativas.innerHTML = json[0].QtdTentativas
+
+        });
+
+    } else {
+      throw "Houve um erro ao exibir a quantidade de tentativas!";
+    }
+  })
+
+
+  
+  fetch("/pontuacao/TotalUsuarios", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      // crie um atributo que recebe o valor recuperado aqui
+      // Agora vá para o arquivo routes/usuario.js
+      idUsuarioServer: sessionStorage.ID_USUARIO
+    }),
+  }).then(function (resposta) {
+    console.log("resposta: ", resposta);
+
+    if (resposta.ok) {
+        
+        resposta.json().then(json => {
+
+            TotalUsuarios.innerHTML = json[0].TotalUsuarios
+
+        });
+
+    } else {
+      throw "Houve um erro ao exibir a quantidade de tentativas!";
+    }
+  })
+ 
 
 
 const labels = [
