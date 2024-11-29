@@ -21,6 +21,7 @@ function autenticar(req, res) {
                             id: resultadoAutenticar[0].idUsuario
                         })
 
+
                         console.log(resultadoAutenticar);
                         res.status(200).send("Usuário validado"); // apenas para exibir o loading
                     } else if (resultadoAutenticar.length == 0) {
