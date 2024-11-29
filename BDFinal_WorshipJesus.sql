@@ -1,5 +1,5 @@
 create database worshipjesus;
-use WorshipJesus;
+use worshipjesus;
 
 CREATE TABLE usuario (
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -17,7 +17,11 @@ CREATE TABLE pontuaçao (
 );
 
 insert into usuario values
-(default, 'Cicera', 67, 'cicera.alves@sptech.school', '123456');
+(default, 'Cicera', 67, 'cicera.alves@sptech.school', '123456'),
+(default, 'Andreia', 48, 'andreia.fosaluza@gmail.com', '123456'),
+(default, 'Thais', 19, 'thais.fosaluza@sptech.school', '123456'),
+(default, 'Paulo', 53, 'paulorogerio.fosaluza@gmail.com', '123456'),
+(default, 'Felipe', 20, 'felipe.santos@gmail.com', '123456');
 
 SELECT idUsuario, nome, email FROM usuario;
 
@@ -30,7 +34,7 @@ select count(idUsuario) as TotalUsuarios from usuario;
 
 -- inserir pontuação
 insert into pontuaçao (pontuaçao, fkUsuario) values
-(7, 3);
+(7, 4);
 
 select idUsuario from usuario where nome = 'Thais';
 
@@ -44,9 +48,4 @@ FROM usuario
 JOIN pontuaçao ON usuario.idUsuario = pontuaçao.FkUsuario
 ORDER BY pontuaçao.pontuaçao DESC
 LIMIT 3;
-
-
-
-
-
 
