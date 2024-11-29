@@ -53,6 +53,42 @@ const questions = [
             {text: "Assistir aula de guitarra 3x na semana", correct: false},
         ] 
     },
+    {
+        question: "Qual prática fortalece nossa fé e confiança em Deus?",
+        answers: [
+            {text: "Estudo de história bíblica", correct: false},
+            {text: "Cantar músicas evangélicas", correct: false},
+            {text: "Oração constante", correct: true},
+            {text: "Ler livros sobre fé", correct: false},
+        ] 
+    },
+    {
+        question: "Qual prática nos ajuda a sermos mais sensíveis à direção de Deus?",
+        answers: [
+            {text: "Falar com amigos sobre nossos sentimentos", correct: false},
+            {text: "Assistir pregações em vídeos", correct: false},
+            {text: "Participar de debates sobre teologia", correct: false},
+            {text: "Meditação na palavra de Deus", correct: true},
+        ] 
+    },
+    {
+        question: "Qual prática é importante para entender melhor o propósito de Deus para nossas vidas?",
+        answers: [
+            {text: "Jejum e oração", correct: true},
+            {text: "Participar de festas na igreja", correct: false},
+            {text: "Estudar a história da igreja", correct: false},
+            {text: "Conversar com pessoas que já passaram por desafios", correct: false},
+        ] 
+    },
+    {
+        question: "Qual prática é essencial para o crescimento espiritual contínuo?",
+        answers: [
+            {text: "Frequentar cultos apenas aos domingos", correct: false},
+            {text: "Ouvir músicas gospel durante todo o dia", correct: false},
+            {text: "Manter uma rotina diária de oração e leitura bíblica", correct: true},
+            {text: "Participar de eventos sociais da igreja", correct: false},
+        ] 
+    },
     
 ];
 
