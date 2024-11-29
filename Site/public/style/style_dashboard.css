@@ -89,3 +89,7 @@ font-size: 15px;
     background-color: #f1efe7;
     color: #1b1c1e;
 }
+
+.grafico1 h1 {
+    width: 400px;
+}

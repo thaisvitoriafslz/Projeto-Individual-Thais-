@@ -6,143 +6,174 @@ const TotalUsuarios = document.getElementById("total-usuarios");
 
 pontuacaoAtual.innerHTML = `${quizScore}/10`;
 
-const Incorretas =  (10 - quizScore)
-const PorcentagemErro = 10 * Incorretas
-const PorcentagemAcerto = 10 * quizScore 
+const Incorretas = 10 - quizScore;
+const PorcentagemErro = 10 * Incorretas;
+const PorcentagemAcerto = 10 * quizScore;
 
-fetch("/pontuacao/QtdTentativasUsuario", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      // crie um atributo que recebe o valor recuperado aqui
-      // Agora vá para o arquivo routes/usuario.js
-      idUsuarioServer: sessionStorage.ID_USUARIO
-    }),
-  }).then(function (resposta) {
-    console.log("resposta: ", resposta);
+let Top1 = "";
+let Top2 = "";
+let Top3 = "";
+let Pont1 = 0;
+let Pont2 = 0;
+let Pont3 = 0;
 
-    if (resposta.ok) {
-        
-        resposta.json().then(json => {
-
-          QtdTentativas.innerHTML = json[0].QtdTentativas
-
+// Função para buscar os dados de tentativas
+function buscarTentativas() {
+    return fetch("/pontuacao/QtdTentativasUsuario", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            idUsuarioServer: sessionStorage.ID_USUARIO
+        }),
+    })
+        .then(resposta => resposta.json())
+        .then(json => {
+            QtdTentativas.innerHTML = json[0].QtdTentativas;
         });
+}
 
-    } else {
-      throw "Houve um erro ao exibir a quantidade de tentativas!";
-    }
-  })
+// Função para buscar o total de usuários
+function buscarTotalUsuarios() {
+    return fetch("/pontuacao/TotalUsuarios", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            idUsuarioServer: sessionStorage.ID_USUARIO
+        }),
+    })
+        .then(resposta => resposta.json())
+        .then(json => {
+            TotalUsuarios.innerHTML = json[0].TotalUsuarios;
+        });
+}
 
+// Função para buscar os Top 3 usuários
+function buscarTop3Usuarios() {
+    return fetch("/pontuacao/Top3Usuarios", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            idUsuarioServer: sessionStorage.ID_USUARIO
+        }),
+    })
+        .then(resposta => resposta.json())
+        .then(json => {
+            Top1 = json[0].Nome;
+            Top2 = json[1].Nome;
+            Top3 = json[2].Nome;
 
+            Pont1 = json[0].Pontuação;
+            Pont2 = json[1].Pontuação;
+            Pont3 = json[2].Pontuação;
+        });
+}
+
+// Função para criar os gráficos
+function criarGraficos() {
+  const labels = [Top1, Top2, Top3];
+
+  const data = {
+      labels: labels,
+      datasets: [
+          {
+              label: 'Pontuação',
+              data: [Pont1, Pont2, Pont3], 
+              backgroundColor: [
+                  "#373a55", 
+                  "#555555", 
+                  "#373a55"
+              ],
+              borderColor: [
+                  "#373a55", 
+                  "#555555", 
+                  "#373a55" 
+              ],
+              borderWidth: 1,
+          }
+      ],
+  };
   
-  fetch("/pontuacao/TotalUsuarios", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      // crie um atributo que recebe o valor recuperado aqui
-      // Agora vá para o arquivo routes/usuario.js
-      idUsuarioServer: sessionStorage.ID_USUARIO
-    }),
-  }).then(function (resposta) {
-    console.log("resposta: ", resposta);
+  const config = {
+      type: "bar",
+      data: data,
+      options: {
+          plugins: {
+              legend: {
+                  display: false, 
+              },
+          },
+          scales: {
+              x: {
+                  grid: {
+                      display: false, 
+                  },
+                  type: 'category', 
+                  labels: labels, 
+              },
+              y: {
+                  grid: {
+                      display: false, 
+                  },
+              },
+          },
+      },
+  };
+  
+  // Criação do gráfico
+  const myChart = new Chart(document.getElementById("chartJS"), config);
+  
 
-    if (resposta.ok) {
-        
-        resposta.json().then(json => {
-
-            TotalUsuarios.innerHTML = json[0].TotalUsuarios
-
-        });
-
-    } else {
-      throw "Houve um erro ao exibir a quantidade de tentativas!";
-    }
-  })
- 
-
-
-const labels = [
-    '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'
-];
-
-const data = {
-    labels: labels,
-    datasets: [{
-        label: 'Temperatura', 
-        data: [1, 2, 3],
-        backgroundColor: 'rgba(0, 0, 255, 0.7)', // Azul
-        borderColor: 'rgba(0, 0, 255, 1)', // Azul forte
-        borderWidth: 1, // Espessura da borda,
-        
-    },
-    {
-        label: 'Umidade', 
-        data: [4, 5, 6],
-        backgroundColor: 'rgba(0, 0, 0, 0.7)', // Preto
-        borderColor: 'rgba(0, 0, 0, 1)', // Preto forte
-        borderWidth: 1, // Espessura da borda
-    }
-    ],
-};
-
-const config = {
-    type: 'bar',
-    data: data,
-    options: {
-        scales: {
-            x: {
-                grid: {
-                    display: false, // Remove as linhas de fundo no eixo X
-                }
+    const labels2 = ["Corretas", "Incorretas"];
+    const data2 = {
+        labels: labels2,
+        datasets: [
+            {
+                label: "Porcentagem",
+                data: [PorcentagemAcerto, PorcentagemErro],
+                backgroundColor: [
+                    "#373a55",
+                    "#555555",
+                ],
             },
-            y: {
-                grid: {
-                    display: false, // Remove as linhas de fundo no eixo Y
-                }
-            }
-        }
-    }
-};
+        ],
+    };
 
-const labels2 = [
-    'Corretas', 'Incorretas'
-];
+    const config2 = {
+        type: "pie",
+        data: data2,
+        options: {},
+    };
 
-const data2 = {
-    labels: labels2,
-    datasets: [{
-        label: 'Porcentagem', 
-        data: [PorcentagemAcerto, PorcentagemErro],
-        backgroundColor: [
-            'rgba(0, 0, 255, 0.7)', // Azul
-            'rgba(0, 0, 0, 0.7)',   // Preto
-            'rgba(0, 0, 255, 0.7)',
-            'rgba(0, 0, 0, 0.7)',
-            'rgba(0, 0, 255, 0.7)',
-            'rgba(0, 0, 0, 0.7)',
-        ]
-    },
-    ]
-};
+    const myChart2 = new Chart(document.getElementById("chartJS2"), config2);
+}
 
-const config2 = {
-    type: 'pie',
-    data: data2,
-    options: {}
-};
+// Aguarda todas as requisições serem concluídas
+Promise.all([buscarTentativas(), buscarTotalUsuarios(), buscarTop3Usuarios()])
+    .then(() => {
+        criarGraficos();
+    })
+    .catch(error => {
+        console.error("Erro ao carregar os dados:", error);
+    });
 
-const myChart = new Chart(
-    document.getElementById('chartJS'),
-    config
-);
 
-const myChart2 = new Chart(
-    document.getElementById('chartJS2'),
-    config2
-);
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -16,4 +16,8 @@ router.post("/TotalUsuarios", function (req, res) {
     pontuacaoController.TotalUsuarios(req, res);
 })
 
+router.post("/Top3Usuarios", function (req, res) {
+    pontuacaoController.Top3Usuarios(req, res);
+})
+
 module.exports = router;

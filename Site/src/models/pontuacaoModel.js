@@ -29,8 +29,23 @@ function TotalUsuarios(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function Top3Usuarios() {
+    
+    var instrucaoSql = `
+        SELECT usuario.nome as Nome,
+        pontuaçao.pontuaçao as Pontuação
+        FROM usuario
+        JOIN pontuaçao ON usuario.idUsuario = pontuaçao.FkUsuario
+        ORDER BY pontuaçao.pontuaçao DESC
+        LIMIT 3;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     InserirPontuacao,
     QtdTentativasUsuario,
-    TotalUsuarios
+    TotalUsuarios,
+    Top3Usuarios
 };
